@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	<h:head>
+		<title>User Registration</title>
+		<h:outputStylesheet name="common.css" library="css" />
+	</h:head>
+	<h:body>
+		<h:form>
+			<rich:panel styleClass="">
+				<f:facet name="header">
+					<h:outputText value="User Registration"></h:outputText>
+				</f:facet>
+				<h:messages />
+				<h:panelGrid columns="2">
+					<h:outputText value="Login Id: "
+						title="This will be your login id." />
+					<h:inputText value="#{registrationBean.userName}" />
+					<h:outputText value="Password: "
+						title="This will be your Password." />
+					<h:inputSecret value="#{registrationBean.password}" />
+					<h:outputText value="First Name: " />
+					<h:inputText value="#{registrationBean.firstName}" />
+					<h:outputText value="Last Name: " />
+					<h:inputText value="#{registrationBean.lastName}" />
+					<h:outputText value="Email:" />
+					<h:inputText value="#{registrationBean.email}" />
+					<h:commandButton title="Register"
+						action="#{registrationBean.registerUser}" alt="Register"
+						id="register" value="Register" type="submit" />
+				</h:panelGrid>
+			</rich:panel>
+		</h:form>
+	</h:body>
+</ui:composition>
